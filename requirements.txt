@@ -1,0 +1,5 @@
+altair
+langchain
+llama-index
+streamlit
+transformers
