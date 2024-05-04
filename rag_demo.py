@@ -10,8 +10,9 @@ from llama_index.core import (
 )
 from llama_index.llms.openai import OpenAI
 from llama_index.core.callbacks import CallbackManager, TokenCountingHandler
-# from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
 
+load_dotenv()
 index_name = "./saved_index"
 documents_folder = "./documents"
 Settings.llm = OpenAI(temperature=0.0, model="gpt-4")
@@ -55,9 +56,6 @@ st.write(
 
 index = initialize_index(index_name, documents_folder)
 
-
-# if index is None:
-#     st.warning("Please enter your api key first.")
 
 text = st.text_input("Query text:", value="What is a filing fee in Germany ?")
 
